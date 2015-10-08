@@ -23,7 +23,7 @@ import org.apache.http.client.config.RequestConfig;
 /**
  * A <i>RestRequest</i> represents a HTTP request to execute.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class RestRequest {
 

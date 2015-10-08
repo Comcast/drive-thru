@@ -24,7 +24,7 @@ import org.apache.http.StatusLine;
 /**
  * A <i>RestResponse</i> represents the result of executing a HTTP request.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class RestResponse {
 

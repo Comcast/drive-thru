@@ -26,7 +26,7 @@ import com.comcast.drivethru.utils.RestResponse;
  * take when a MockHttpClient gets a matching execute call. Most methods return <code>this</code> to
  * allow for method chaining when recording.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class ResponseBuilder {
 

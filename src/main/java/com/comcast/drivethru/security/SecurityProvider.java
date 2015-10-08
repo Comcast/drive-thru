@@ -23,7 +23,7 @@ import com.comcast.drivethru.exception.HttpException;
  * A SecurityProvider provides signing (or encryption) services for a {@link HttpUriRequest} just
  * prior to internal execution.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public interface SecurityProvider {
 

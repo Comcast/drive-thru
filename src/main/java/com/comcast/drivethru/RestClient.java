@@ -35,7 +35,7 @@ import com.comcast.drivethru.utils.URL;
  * object, that method will throw an {@link HttpException}.
  * </p>
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public interface RestClient extends Closeable {
 

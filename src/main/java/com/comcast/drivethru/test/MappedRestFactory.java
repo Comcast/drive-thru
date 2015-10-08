@@ -29,7 +29,7 @@ import com.comcast.drivethru.RestFactory;
  * defaultBaseUrl is matched. This is particularly useful when testing components that use a factory
  * to get access to HttpClients.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class MappedRestFactory extends RestFactory {
 

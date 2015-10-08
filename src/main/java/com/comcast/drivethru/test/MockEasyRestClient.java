@@ -31,7 +31,7 @@ import com.comcast.drivethru.utils.RestResponse;
  * The {@link MockEasyRestClient} extends the {@link DefaultEasyRestClient} and overrides the
  * {@link DefaultRestClient#execute(RestRequest)} method to only replay recorded responses.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements RecordingRestClient {
 

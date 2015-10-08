@@ -35,7 +35,7 @@ import com.comcast.cvs.cereal.engines.CerealEngine;
  * Abstract implementation of a {@link HttpMessageConverter} that delegates to a
  * {@link CerealEngine} to do the internal converting.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class AbstractCerealHttpMessageConverter extends AbstractHttpMessageConverter<Object> {
 

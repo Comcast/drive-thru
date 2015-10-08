@@ -37,7 +37,7 @@ import com.comcast.drivethru.utils.RestResponse;
  * This Class is intentionally disabled because we don't need to run this constantly and it requires
  * real Internet traffic. We disable by commenting out the TestNG annotations.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class StatusCodeIT {
 

@@ -27,7 +27,7 @@ import com.comcast.drivethru.utils.URL;
 /**
  * The default implementation of a {@link EasyRestClient}.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class DefaultEasyRestClient<R> extends DefaultRestClient implements EasyRestClient<R> {
 

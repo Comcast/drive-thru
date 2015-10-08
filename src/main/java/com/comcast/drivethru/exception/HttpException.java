@@ -18,7 +18,7 @@ package com.comcast.drivethru.exception;
 /**
  * An Exception to indicate that a problem occurred while executing an HTTP action.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class HttpException extends Exception {
 

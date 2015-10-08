@@ -49,7 +49,7 @@ import com.comcast.drivethru.utils.URL;
 /**
  * The default implementation of a {@link RestClient}.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  * @author <a href="mailto:kevin_pearson@cable.comcast.com">Kevin Pearson</a>
  */
 public class DefaultRestClient implements RestClient {

@@ -58,7 +58,7 @@ import com.comcast.cvs.cereal.engines.YamlCerealEngine;
  *
  * @see MediaType#APPLICATION_JSON
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class YamlCerealHttpMessageConverter extends AbstractCerealHttpMessageConverter {
 

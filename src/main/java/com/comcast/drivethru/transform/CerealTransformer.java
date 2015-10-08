@@ -23,7 +23,7 @@ import com.comcast.drivethru.exception.HttpException;
 /**
  * An abstract {@link Transformer} that delegates to a {@link CerealEngine} for conversion.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public abstract class CerealTransformer extends StringTransformer {
 

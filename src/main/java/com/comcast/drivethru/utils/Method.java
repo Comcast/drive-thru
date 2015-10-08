@@ -28,7 +28,7 @@ import com.comcast.drivethru.exception.HttpException;
 /**
  * An enum representing the full set of supported HTTP methods.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public enum Method {
 

@@ -27,7 +27,7 @@ import com.comcast.drivethru.utils.URL;
  * The <i>Recorded</i> is a delegate to provide {@link RecordingRestClient} utilities for
  * MockHttpClients.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public class Recorder implements RecordingRestClient {
 

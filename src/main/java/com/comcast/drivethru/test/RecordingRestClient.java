@@ -22,7 +22,7 @@ import com.comcast.drivethru.utils.Method;
  * A <i>RecordingRestClient</i> provides test-only capacity to record responses that will be
  * returned when matching requests are executed.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public interface RecordingRestClient {
 

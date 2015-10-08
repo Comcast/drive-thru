@@ -22,7 +22,7 @@ import com.comcast.drivethru.exception.HttpException;
  * A {@link Transformer} provides the underlying capability to transform between Java objects and
  * the byte array payload of an HTTP body.
  *
- * @author <a href="mailto:clark_malmgren@cable.comcast.com">Clark Malmgren</a>
+ * @author <a href="mailto:cmalmgren@gmail.com">Clark Malmgren</a>
  */
 public interface Transformer {
 
