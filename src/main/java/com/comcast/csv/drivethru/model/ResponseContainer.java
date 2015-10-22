@@ -145,7 +145,7 @@ public class ResponseContainer
 
         for (Header h : mHeaders)
         {
-            if (h.getName().equals("Set-Cookie"))
+            if (h.getName().equalsIgnoreCase("set-cookie"))
             {
                 cookies.add(h.getValue());
             }
