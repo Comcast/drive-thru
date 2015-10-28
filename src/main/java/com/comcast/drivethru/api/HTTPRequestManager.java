@@ -17,7 +17,7 @@
  * @author Bobby Jap
  */
 
-package com.comcast.csv.drivethru.api;
+package com.comcast.drivethru.api;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -47,8 +47,8 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.comcast.csv.drivethru.constants.ServerStatusCodes;
-import com.comcast.csv.drivethru.model.ResponseContainer;
+import com.comcast.drivethru.constants.ServerStatusCodes;
+import com.comcast.drivethru.model.ResponseContainer;
 
 public final class HTTPRequestManager
 {

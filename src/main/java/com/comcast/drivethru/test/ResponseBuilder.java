@@ -15,8 +15,8 @@
  */
 package com.comcast.drivethru.test;
 
-import com.comcast.cvs.cereal.CerealException;
-import com.comcast.cvs.cereal.engines.JsonCerealEngine;
+import com.comcast.cereal.CerealException;
+import com.comcast.cereal.engines.JsonCerealEngine;
 import com.comcast.drivethru.exception.HttpException;
 import com.comcast.drivethru.utils.Method;
 import com.comcast.drivethru.utils.RestResponse;

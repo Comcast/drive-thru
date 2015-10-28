@@ -21,7 +21,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.comcast.cvs.cereal.engines.YamlCerealEngine;
+import com.comcast.cereal.engines.YamlCerealEngine;
 
 /**
  * A {@link HttpMessageConverter} that can be used with spring that will do the internal conversion

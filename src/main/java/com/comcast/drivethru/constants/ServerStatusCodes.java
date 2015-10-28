@@ -17,7 +17,7 @@
  * @author Bobby Jap
  */
 
-package com.comcast.csv.drivethru.constants;
+package com.comcast.drivethru.constants;
 
 public class ServerStatusCodes
 {

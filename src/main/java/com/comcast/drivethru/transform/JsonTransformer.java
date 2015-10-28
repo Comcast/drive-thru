@@ -15,7 +15,7 @@
  */
 package com.comcast.drivethru.transform;
 
-import com.comcast.cvs.cereal.engines.JsonCerealEngine;
+import com.comcast.cereal.engines.JsonCerealEngine;
 
 
 /**

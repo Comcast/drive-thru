@@ -28,8 +28,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.AbstractHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 
-import com.comcast.cvs.cereal.CerealException;
-import com.comcast.cvs.cereal.engines.CerealEngine;
+import com.comcast.cereal.CerealException;
+import com.comcast.cereal.engines.CerealEngine;
 
 /**
  * Abstract implementation of a {@link HttpMessageConverter} that delegates to a

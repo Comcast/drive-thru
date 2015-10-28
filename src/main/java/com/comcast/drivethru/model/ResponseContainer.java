@@ -16,7 +16,7 @@
 /**
  * @author Dmitry Jerusalimsky
  */
-package com.comcast.csv.drivethru.model;
+package com.comcast.drivethru.model;
 
 import java.util.ArrayList;
 import java.util.List;

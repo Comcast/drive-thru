@@ -3,7 +3,7 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.comcast.csv.drivethru</groupId>
+    <groupId>com.comcast.drivethru</groupId>
     <artifactId>drive-thru</artifactId>
     <version>2.0-SNAPSHOT</version>
     <name>(Comcast) ${project.artifactId}</name>
@@ -67,9 +67,9 @@
             <version>2.2.4</version>
         </dependency>
         <dependency>
-            <groupId>com.comcast.cvs.cereal</groupId>
+            <groupId>com.comcast.cereal</groupId>
             <artifactId>cereal</artifactId>
-            <version>[4.0,4.1)</version>
+            <version>4.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>oauth.signpost</groupId>

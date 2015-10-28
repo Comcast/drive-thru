@@ -15,8 +15,8 @@
  */
 package com.comcast.drivethru.transform;
 
-import com.comcast.cvs.cereal.CerealException;
-import com.comcast.cvs.cereal.engines.CerealEngine;
+import com.comcast.cereal.CerealException;
+import com.comcast.cereal.engines.CerealEngine;
 import com.comcast.drivethru.exception.HttpException;
 
 
