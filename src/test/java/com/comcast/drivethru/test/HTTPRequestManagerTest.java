@@ -23,8 +23,8 @@ import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.comcast.drivethru.api.HTTPRequestManager;
 import com.comcast.drivethru.api.HTTPRequestManager.METHOD;
@@ -53,7 +53,7 @@ public class HTTPRequestManagerTest
      * @throws NoSuchAlgorithmException
      * @throws IOException
      */
-    @Test(expected = IllegalStateException.class)
+    @Test(expectedExceptions = IllegalStateException.class)
     public void testRequestNoURL() throws KeyManagementException, NoSuchAlgorithmException, IOException
     {
         HTTPRequestManager manager = new HTTPRequestManager.Builder().build();
@@ -85,7 +85,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals("Status code wasn't 200", ServerStatusCodes.OK, response.getStatusCode());
+        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
 
         String responseBody = response.getResponseBody();
         JsonObject jsonObject = null;
@@ -103,8 +103,8 @@ public class HTTPRequestManagerTest
         String name = jsonObject.get("name").getAsString();
         String id = jsonObject.get("id").getAsString();
 
-        Assert.assertEquals("Device names didn't match", "test device 123", name);
-        Assert.assertEquals("Device IDs didn't match", "testdevice", id);
+        Assert.assertEquals("test device 123", name, "Device names didn't match");
+        Assert.assertEquals("testdevice", id, "Device IDs didn't match");
     }
 
     /**
@@ -128,7 +128,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals("Status code wasn't 200", ServerStatusCodes.OK, response.getStatusCode());
+        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
     }
 
     /**
@@ -152,7 +152,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals("Status code wasn't 200", ServerStatusCodes.OK, response.getStatusCode());
+        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
 
         JsonParser parser = new JsonParser();
         JsonObject responseBody = (JsonObject) parser.parse(response.getResponseBody());
@@ -161,8 +161,8 @@ public class HTTPRequestManagerTest
         String name = responseBody.get("name").getAsString();
         String id = responseBody.get("id").getAsString();
 
-        Assert.assertEquals("Device names didn't match", "test device 123", name);
-        Assert.assertEquals("Device IDs didn't match", "testdevice", id);
+        Assert.assertEquals("test device 123", name, "Device names didn't match");
+        Assert.assertEquals("testdevice", id, "Device IDs didn't match");
     }
 
     /**
@@ -185,6 +185,6 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals("Status code wasn't 200", ServerStatusCodes.OK, response.getStatusCode());
+        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
     }
 }
