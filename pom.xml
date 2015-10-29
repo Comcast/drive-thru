@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.comcast.drivethru</groupId>
     <artifactId>drive-thru</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <version>2.0.1</version>
     <name>(Comcast) ${project.artifactId}</name>
     <inceptionYear>2013</inceptionYear>
     <description>Drive-Thru is a helper utility for making HTTP requests</description>
@@ -56,7 +55,7 @@
         <connection>scm:git:git@${git.url}:${git.org}/${git.repo}.git</connection>
         <developerConnection>scm:git:git@${git.url}:${git.org}/${git.repo}.git</developerConnection>
         <url>https://${git.url}/${git.org}/${git.repo}</url>
-        <tag>HEAD</tag>
+        <tag>drive-thru-2.0.1</tag>
     </scm>
 
     <dependencies>
@@ -68,7 +67,7 @@
         <dependency>
             <groupId>com.comcast.cereal</groupId>
             <artifactId>cereal</artifactId>
-            <version>4.0-SNAPSHOT</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>oauth.signpost</groupId>
@@ -129,7 +128,7 @@
         <dependency>
             <groupId>com.comcast.pantry</groupId>
             <artifactId>pantry</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>2.0.8</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
