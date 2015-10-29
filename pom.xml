@@ -8,6 +8,8 @@
     <version>2.0-SNAPSHOT</version>
     <name>(Comcast) ${project.artifactId}</name>
     <inceptionYear>2013</inceptionYear>
+    <description>Drive-Thru is a helper utility for making HTTP requests</description>
+    <url>https://github.com/Comcast/drive-thru</url>
     
     <licenses>
         <license>
@@ -42,9 +44,6 @@
 
     <properties>
         <java.compile.version>1.7</java.compile.version>
-        <maven.javadoc.plugin.version>2.10.1</maven.javadoc.plugin.version>
-        <maven.plugin.license.version>2.11</maven.plugin.license.version>
-        <maven.source.plugin.version>2.3</maven.source.plugin.version>
         <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
         
         <!-- Github Info -->
@@ -130,7 +129,7 @@
         <dependency>
             <groupId>com.comcast.pantry</groupId>
             <artifactId>pantry</artifactId>
-            <version>1.0.1</version>
+            <version>2.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -165,7 +164,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${maven.source.plugin.version}</version>
+                <version>2.3</version>
                 <executions>
                     <execution>
                         <goals>
@@ -177,7 +176,7 @@
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>${maven.plugin.license.version}</version>
+                <version>2.11</version>
                 <configuration>
                     <header>LICENSE_TEMPLATE.txt</header>
                     <properties>
@@ -201,6 +200,16 @@
                     </executions>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -221,7 +230,6 @@
                     <configuration>
                         <source>${java.compile.version}</source>
                         <target>${java.compile.version}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
                     </configuration>
                 </plugin>
             </plugins>
@@ -239,7 +247,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven.javadoc.plugin.version}</version>
+                        <version>2.10.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -252,7 +260,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven.gpg.version}</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
