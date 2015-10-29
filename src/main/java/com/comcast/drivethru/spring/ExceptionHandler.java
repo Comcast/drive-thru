@@ -43,12 +43,12 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * <pre>
  *   &lt;!-- Common Exception Handling --&gt;
- *   &lt;bean class="com.comcast.tvx.megahttp.spring.ExceptionHandler"&gt;
+ *   &lt;bean class="com.comcast.drivethru.spring.ExceptionHandler"&gt;
  *     &lt;property name="defaultResponse" value="500" /&gt;
  *     &lt;property name="viewName" value="error.html" /&gt;
  *     &lt;property name="exceptionMap"&gt;
  *       &lt;map&gt;
- *         &lt;entry key="com.comcast.cvs.xtream.security.SecurityException" value="500" /&gt;
+ *         &lt;entry key="com.comcast.xtream.security.SecurityException" value="500" /&gt;
  *       &lt;/map&gt;
  *     &lt;/property&gt;
  *   &lt;/bean&gt;
