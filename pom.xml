@@ -44,6 +44,7 @@
     <properties>
         <java.compile.version>1.7</java.compile.version>
         <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
+        <autoReleaseAfterClose>false</autoReleaseAfterClose>
         
         <!-- Github Info -->
         <git.url>github.com</git.url>
