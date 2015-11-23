@@ -283,7 +283,10 @@ public final class HTTPRequestManager
             }
 
             int responseCode = response.getStatusLine().getStatusCode();
-            String responseText = EntityUtils.toString(response.getEntity());
+            String responseText = null;
+            if (null != response.getEntity()) {
+                responseText = EntityUtils.toString(response.getEntity());
+            }
             Header[] headers = response.getAllHeaders();
             String responseLog = "Response: " + responseCode + " - ";
 
