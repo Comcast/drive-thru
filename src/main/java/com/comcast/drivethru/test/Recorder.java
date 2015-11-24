@@ -35,7 +35,7 @@ public class Recorder implements RecordingRestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect()
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect()
      */
     @Override
     public ResponseBuilder expect() {
@@ -46,7 +46,7 @@ public class Recorder implements RecordingRestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(java.lang.String)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(java.lang.String)
      */
     @Override
     public ResponseBuilder expect(String pattern) {
@@ -57,7 +57,7 @@ public class Recorder implements RecordingRestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(java.lang.String, boolean)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(java.lang.String, boolean)
      */
     @Override
     public ResponseBuilder expect(String pattern, boolean regex) {
@@ -69,7 +69,7 @@ public class Recorder implements RecordingRestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method
+     * com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method
      * )
      */
     @Override
@@ -82,7 +82,7 @@ public class Recorder implements RecordingRestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method
+     * com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method
      * , java.lang.String)
      */
     @Override
@@ -95,7 +95,7 @@ public class Recorder implements RecordingRestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method
+     * com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method
      * , java.lang.String, boolean)
      */
     @Override

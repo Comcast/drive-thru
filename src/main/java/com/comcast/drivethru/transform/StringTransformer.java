@@ -55,7 +55,7 @@ public abstract class StringTransformer implements Transformer {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.transform.Transformer#read(byte[], java.lang.Class)
+     * @see com.comcast.drivethru.transform.Transformer#read(byte[], java.lang.Class)
      */
     @Override
     public <T> T read(byte[] body, Class<T> type) throws HttpException {
@@ -64,7 +64,7 @@ public abstract class StringTransformer implements Transformer {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.transform.Transformer#write(java.lang.Object)
+     * @see com.comcast.drivethru.transform.Transformer#write(java.lang.Object)
      */
     @Override
     public <T> byte[] write(T t) throws HttpException {

@@ -28,7 +28,7 @@ public class MockRestFactory extends RestFactory {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestFactory#getClient(java.lang.String)
+     * @see com.comcast.drivethru.RestFactory#getClient(java.lang.String)
      */
     public RestClient getClient(String defaultBaseUrl) {
         return getMockClient(defaultBaseUrl);
@@ -36,7 +36,7 @@ public class MockRestFactory extends RestFactory {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestFactory#getEasyClient(java.lang.Class, java.lang.String)
+     * @see com.comcast.drivethru.RestFactory#getEasyClient(java.lang.Class, java.lang.String)
      */
     public <T> EasyRestClient<T> getEasyClient(Class<T> type, String defaultBaseUrl) {
         return getMockEasyClient(type, defaultBaseUrl);

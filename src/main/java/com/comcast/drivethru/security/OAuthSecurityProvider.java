@@ -56,7 +56,7 @@ public class OAuthSecurityProvider implements SecurityProvider {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.security.SecurityProvider#sign(org.apache.http.client.methods.HttpUriRequest)
+     * @see com.comcast.drivethru.security.SecurityProvider#sign(org.apache.http.client.methods.HttpUriRequest)
      */
     public synchronized void sign(HttpUriRequest request) throws HttpException {
         try {

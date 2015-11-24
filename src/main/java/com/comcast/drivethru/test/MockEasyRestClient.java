@@ -66,7 +66,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect()
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect()
      */
     @Override
     public ResponseBuilder expect() {
@@ -75,7 +75,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(java.lang.String)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(java.lang.String)
      */
     @Override
     public ResponseBuilder expect(String pattern) {
@@ -84,7 +84,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(java.lang.String, boolean)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(java.lang.String, boolean)
      */
     @Override
     public ResponseBuilder expect(String pattern, boolean regex) {
@@ -93,7 +93,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method)
      */
     @Override
     public ResponseBuilder expect(Method method) {
@@ -102,7 +102,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method, java.lang.String)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method, java.lang.String)
      */
     @Override
     public ResponseBuilder expect(Method method, String pattern) {
@@ -111,7 +111,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.test.RecordingRestClient#expect(com.comcast.tvx.megahttp.utils.Method, java.lang.String, boolean)
+     * @see com.comcast.drivethru.test.RecordingRestClient#expect(com.comcast.drivethru.utils.Method, java.lang.String, boolean)
      */
     @Override
     public ResponseBuilder expect(Method method, String pattern, boolean regex) {
@@ -120,7 +120,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.client.DefaultBasicHttpClient#execute(com.comcast.tvx.megahttp.utils.RestRequest)
+     * @see com.comcast.drivethru.client.DefaultBasicHttpClient#execute(com.comcast.drivethru.utils.RestRequest)
      */
     @Override
     public RestResponse execute(RestRequest request) throws HttpException {
@@ -129,7 +129,7 @@ public class MockEasyRestClient<R> extends DefaultEasyRestClient<R> implements R
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.client.DefaultBasicHttpClient#close()
+     * @see com.comcast.drivethru.client.DefaultBasicHttpClient#close()
      */
     @Override
     public void close() throws IOException {}

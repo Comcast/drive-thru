@@ -126,7 +126,7 @@ public class DefaultEasyRestClient<R> extends DefaultRestClient implements EasyR
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.EasyRestClient#get(java.lang.String)
+     * @see com.comcast.drivethru.EasyRestClient#get(java.lang.String)
      */
     @Override
     public R get(String path) throws HttpException {
@@ -135,7 +135,7 @@ public class DefaultEasyRestClient<R> extends DefaultRestClient implements EasyR
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.EasyRestClient#get(com.comcast.tvx.megahttp.utils.URL)
+     * @see com.comcast.drivethru.EasyRestClient#get(com.comcast.drivethru.utils.URL)
      */
     @Override
     public R get(URL url) throws HttpException {

@@ -36,7 +36,7 @@ import com.comcast.cereal.engines.JsonCerealEngine;
  * <pre>
  *   &lt;mvc:annotation-driven&gt;
  *     &lt;mvc:message-converters register-defaults="false"&gt;
- *       &lt;bean class="com.comcast.tvx.megahttp.spring.JsonCerealHttpMessageConverter" /&gt;
+ *       &lt;bean class="com.comcast.drivethru.spring.JsonCerealHttpMessageConverter" /&gt;
  *     &lt;/mvc:message-converters&gt;
  *   &lt;/mvc:annotation-driven&gt;
  * </pre>
@@ -49,7 +49,7 @@ import com.comcast.cereal.engines.JsonCerealEngine;
  * <pre>
  *   &lt;mvc:annotation-driven&gt;
  *     &lt;mvc:message-converters register-defaults="false"&gt;
- *       &lt;bean class="com.comcast.tvx.megahttp.spring.JsonCerealHttpMessageConverter"&gt;
+ *       &lt;bean class="com.comcast.drivethru.spring.JsonCerealHttpMessageConverter"&gt;
  *         &lt;constructor-arg index="0" ref="jsonEngine" /&gt;
  *       &lt;/bean&gt;
  *     &lt;/mvc:message-converters&gt;

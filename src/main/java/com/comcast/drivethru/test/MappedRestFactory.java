@@ -79,7 +79,7 @@ public class MappedRestFactory extends RestFactory {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestFactory#getClient(java.lang.String)
+     * @see com.comcast.drivethru.RestFactory#getClient(java.lang.String)
      */
     public RestClient getClient(String defaultBaseUrl) {
         return (RestClient) mapping.get(defaultBaseUrl);
@@ -87,7 +87,7 @@ public class MappedRestFactory extends RestFactory {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestFactory#getEasyClient(java.lang.Class, java.lang.String)
+     * @see com.comcast.drivethru.RestFactory#getEasyClient(java.lang.Class, java.lang.String)
      */
     @SuppressWarnings("unchecked")
     public <T> EasyRestClient<T> getEasyClient(Class<T> type, String defaultBaseUrl) {

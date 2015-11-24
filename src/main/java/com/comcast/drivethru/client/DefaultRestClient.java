@@ -138,7 +138,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestClient#getDefaultBaseUrl()
+     * @see com.comcast.drivethru.RestClient#getDefaultBaseUrl()
      */
     @Override
     public String getDefaultBaseUrl() {
@@ -147,7 +147,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.clients.BasicMegaHttpClient#addDefaultHeader(java.lang.String,
+     * @see com.comcast.drivethru.clients.BasicMegaHttpClient#addDefaultHeader(java.lang.String,
      * java.lang.String)
      */
     @Override
@@ -158,8 +158,8 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.clients.BasicMegaHttpClient#setSecurityProvider(com.comcast.tvx.
-     * megahttp.security.SecurityProvider)
+     * com.comcast.drivethru.clients.BasicMegaHttpClient#setSecurityProvider(com.comcast.
+     * drivethru.security.SecurityProvider)
      */
     @Override
     public void setSecurityProvider(SecurityProvider securityProvider) {
@@ -169,7 +169,7 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.RestClient#setTransformer(com.comcast.tvx.megahttp.rest.Transformer
+     * com.comcast.drivethru.RestClient#setTransformer(com.comcast.drivethru.rest.Transformer
      * )
      */
     @Override
@@ -180,7 +180,7 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.clients.BasicMegaHttpClient#execute(com.comcast.tvx.megahttp.HttpRequest
+     * com.comcast.drivethru.clients.BasicMegaHttpClient#execute(com.comcast.drivethru.HttpRequest
      * )
      */
     @Override
@@ -260,7 +260,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.clients.EasyMegaHttpClient#get(java.lang.String,
+     * @see com.comcast.drivethru.clients.EasyMegaHttpClient#get(java.lang.String,
      * java.lang.Class)
      */
     @Override
@@ -271,7 +271,7 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.clients.EasyMegaHttpClient#get(com.comcast.tvx.megahttp.utils.URL,
+     * com.comcast.drivethru.clients.EasyMegaHttpClient#get(com.comcast.drivethru.utils.URL,
      * java.lang.Class)
      */
     @Override
@@ -294,7 +294,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.clients.EasyMegaHttpClient#put(java.lang.String, T)
+     * @see com.comcast.drivethru.clients.EasyMegaHttpClient#put(java.lang.String, T)
      */
     @Override
     public <T> boolean put(String path, T t) throws HttpException {
@@ -304,7 +304,7 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.clients.EasyMegaHttpClient#put(com.comcast.tvx.megahttp.utils.URL,
+     * com.comcast.drivethru.clients.EasyMegaHttpClient#put(com.comcast.drivethru.utils.URL,
      * T)
      */
     @Override
@@ -327,7 +327,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.clients.EasyMegaHttpClient#delete(java.lang.String)
+     * @see com.comcast.drivethru.clients.EasyMegaHttpClient#delete(java.lang.String)
      */
     @Override
     public boolean delete(String path) throws HttpException {
@@ -337,7 +337,7 @@ public class DefaultRestClient implements RestClient {
     /*
      * (non-Javadoc)
      * @see
-     * com.comcast.tvx.megahttp.clients.EasyHttpClient#delete(com.comcast.tvx.megahttp.utils.URL)
+     * com.comcast.drivethru.clients.EasyHttpClient#delete(com.comcast.drivethru.utils.URL)
      */
     @Override
     public boolean delete(URL url) throws HttpException {
@@ -357,7 +357,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestClient#post(java.lang.String, java.lang.Class)
+     * @see com.comcast.drivethru.RestClient#post(java.lang.String, java.lang.Class)
      */
     @Override
     public <T> T post(String path, Class<T> responseType) throws HttpException {
@@ -366,7 +366,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestClient#post(java.lang.String, java.lang.Class)
+     * @see com.comcast.drivethru.RestClient#post(java.lang.String, java.lang.Class)
      */
     @Override
     public <T> T post(URL url, Class<T> responseType) throws HttpException {
@@ -375,7 +375,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestClient#post(java.lang.String, java.lang.Object,
+     * @see com.comcast.drivethru.RestClient#post(java.lang.String, java.lang.Object,
      * java.lang.Class)
      */
     @Override
@@ -385,7 +385,7 @@ public class DefaultRestClient implements RestClient {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.RestClient#post(com.comcast.tvx.megahttp.utils.URL,
+     * @see com.comcast.drivethru.RestClient#post(com.comcast.drivethru.utils.URL,
      * java.lang.Object, java.lang.Class)
      */
     @Override

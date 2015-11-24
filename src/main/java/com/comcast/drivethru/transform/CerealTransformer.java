@@ -42,7 +42,7 @@ public abstract class CerealTransformer extends StringTransformer {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.transform.StringTransformer#readString(java.lang.String,
+     * @see com.comcast.drivethru.transform.StringTransformer#readString(java.lang.String,
      * java.lang.Class)
      */
     @Override
@@ -56,7 +56,7 @@ public abstract class CerealTransformer extends StringTransformer {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.transform.StringTransformer#writeString(java.lang.Object)
+     * @see com.comcast.drivethru.transform.StringTransformer#writeString(java.lang.Object)
      */
     @Override
     public <T> String writeString(T t) throws HttpException {

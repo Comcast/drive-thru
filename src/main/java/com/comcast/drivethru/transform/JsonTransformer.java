@@ -34,7 +34,7 @@ public class JsonTransformer extends CerealTransformer {
 
     /*
      * (non-Javadoc)
-     * @see com.comcast.tvx.megahttp.rest.RestTransformer#getMime()
+     * @see com.comcast.drivethru.rest.RestTransformer#getMime()
      */
     @Override
     public String getMime() {

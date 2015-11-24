@@ -36,7 +36,7 @@ import com.comcast.cereal.engines.YamlCerealEngine;
  * <pre>
  *   &lt;mvc:annotation-driven&gt;
  *     &lt;mvc:message-converters register-defaults="false"&gt;
- *       &lt;bean class="com.comcast.tvx.megahttp.spring.YamlCerealHttpMessageConverter" /&gt;
+ *       &lt;bean class="com.comcast.drivethru.spring.YamlCerealHttpMessageConverter" /&gt;
  *     &lt;/mvc:message-converters&gt;
  *   &lt;/mvc:annotation-driven&gt;
  * </pre>
@@ -49,7 +49,7 @@ import com.comcast.cereal.engines.YamlCerealEngine;
  * <pre>
  *   &lt;mvc:annotation-driven&gt;
  *     &lt;mvc:message-converters register-defaults="false"&gt;
- *       &lt;bean class="com.comcast.tvx.megahttp.spring.YamlCerealHttpMessageConverter"&gt;
+ *       &lt;bean class="com.comcast.drivethru.spring.YamlCerealHttpMessageConverter"&gt;
  *         &lt;constructor-arg index="0" ref="yamlEngine" /&gt;
  *       &lt;/bean&gt;
  *     &lt;/mvc:message-converters&gt;
