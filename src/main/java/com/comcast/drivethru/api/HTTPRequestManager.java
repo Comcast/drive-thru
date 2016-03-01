@@ -59,6 +59,7 @@ public final class HTTPRequestManager
     // HTTP Request properties
     private String mUrl;
     private byte[] mData;
+    private HttpEntity mMultipart;
     private SSLConnectionSocketFactory mSocketFactory;
     private String mContentType;
     private Entry<String, String> mAuth;
@@ -90,6 +91,7 @@ public final class HTTPRequestManager
     {
         mUrl = builder.mUrl;
         mData = builder.mData;
+        mMultipart = builder.mMultipart;
         mSocketFactory = builder.mSocketFactory;
         mContentType = builder.mContentType;
         mAuth = builder.mAuth;
@@ -226,8 +228,12 @@ public final class HTTPRequestManager
         setHeaders(httpMethod);
 
         ResponseContainer container = null;
-
-        if ((mData != null) && (mData.length > 0))
+        
+        if (mMultipart != null)
+        {
+            container = sendRequestWithMultipartData(client, httpMethod);
+        }
+        else if ((mData != null) && (mData.length > 0))
         {
             container = sendRequestWithData(client, httpMethod);
         }
@@ -237,6 +243,22 @@ public final class HTTPRequestManager
         }
 
         return container;
+    }
+
+    /**
+     * Sends request with multipart data and returns {@link ResponseContainer} object containing response's status code and body.
+     * @param client HttpClient use to send request
+     * @param request Http request object to be sent out
+     * @return {@link ResponseContainer} with response data
+     * @throws IOException When there's an error sending out request
+     */
+    private ResponseContainer sendRequestWithMultipartData(CloseableHttpClient client, HttpUriRequest request) throws IOException
+    {
+        HttpEntityEnclosingRequestBase httpMethod = (HttpEntityEnclosingRequestBase) request;
+
+        httpMethod.setEntity(mMultipart);
+
+        return sendRequest(client, httpMethod);
     }
 
     /**
@@ -358,6 +380,7 @@ public final class HTTPRequestManager
         private Map<String, String> mHeaders;
         private SSLConnectionSocketFactory mSocketFactory = null;
         private byte[] mData;
+        private HttpEntity mMultipart;
         private String mUserAgent;
         private String[] mCookies;
 
@@ -416,6 +439,17 @@ public final class HTTPRequestManager
         public Builder data(byte[] data)
         {
             mData = data;
+            return this;
+        }
+        
+        /**
+         * Sets request's multipart data.
+         * @param multipart Multipart data to send the server
+         * @return {@link Builder} object
+         */
+        public Builder multipart(HttpEntity multipart)
+        {
+            mMultipart = multipart;
             return this;
         }
 
