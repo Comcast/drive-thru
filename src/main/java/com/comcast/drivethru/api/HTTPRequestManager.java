@@ -292,7 +292,7 @@ public final class HTTPRequestManager
 
             if (responseText != null) responseLog += responseText;
 
-            if (responseCode == ServerStatusCodes.OK)
+            if (responseCode >= ServerStatusCodes.OK && responseCode <= ServerStatusCodes.PARTIAL_CONTENT)
             {
                 LOGGER.info(responseLog);
             }
