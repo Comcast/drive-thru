@@ -19,8 +19,12 @@
 
 package com.comcast.drivethru.api;
 
+import static com.comcast.drivethru.constants.ServerStatusCodes.*;
+
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -47,12 +51,25 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.comcast.drivethru.constants.ServerStatusCodes;
 import com.comcast.drivethru.model.ResponseContainer;
 
 public final class HTTPRequestManager
 {
     // PROPERTIES ----------------------------------------------------------------------------------------------------------
+    
+    List<Integer> SUCCESS_CODES = Arrays.asList(new Integer[]
+    { 
+        OK, 
+        CREATED, 
+        ACCEPTED, 
+        NONAUTHORITATIVE_INFORMATION, 
+        NO_CONTENT,
+        RESET_CONTENT,
+        PARTIAL_CONTENT,
+        MULTI_STATUS,
+        ALREADY_REPORTED,
+        IM_USED 
+    });
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HTTPRequestManager.class);
 
@@ -291,8 +308,8 @@ public final class HTTPRequestManager
             String responseLog = "Response: " + responseCode + " - ";
 
             if (responseText != null) responseLog += responseText;
-
-            if (responseCode >= ServerStatusCodes.OK && responseCode <= ServerStatusCodes.PARTIAL_CONTENT)
+            
+            if (SUCCESS_CODES.contains(responseCode))
             {
                 LOGGER.info(responseLog);
             }
