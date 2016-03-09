@@ -20,6 +20,7 @@
 package com.comcast.drivethru.api;
 
 import java.io.IOException;
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -50,7 +51,7 @@ import org.slf4j.LoggerFactory;
 import com.comcast.drivethru.constants.ServerStatusCodes;
 import com.comcast.drivethru.model.ResponseContainer;
 
-public final class HTTPRequestManager
+public class HTTPRequestManager
 {
     // PROPERTIES ----------------------------------------------------------------------------------------------------------
 
@@ -87,7 +88,7 @@ public final class HTTPRequestManager
      * Private constructor used by the Builder subclass to create and initialize the HTTPResposneManager object.
      * @param builder Builder object that has all the needed parts to make a HTTP(S) request
      */
-    private HTTPRequestManager(Builder builder)
+    HTTPRequestManager(Builder builder)
     {
         mUrl = builder.mUrl;
         mData = builder.mData;
@@ -231,6 +232,9 @@ public final class HTTPRequestManager
         
         if (mMultipart != null)
         {
+            if (!mContentType.equals("multipart/form-data"))
+                throw new InvalidParameterException("Content type must be set to multipart/form-data for this type of request");
+                
             container = sendRequestWithMultipartData(client, httpMethod);
         }
         else if ((mData != null) && (mData.length > 0))
@@ -252,7 +256,7 @@ public final class HTTPRequestManager
      * @return {@link ResponseContainer} with response data
      * @throws IOException When there's an error sending out request
      */
-    private ResponseContainer sendRequestWithMultipartData(CloseableHttpClient client, HttpUriRequest request) throws IOException
+    ResponseContainer sendRequestWithMultipartData(CloseableHttpClient client, HttpUriRequest request) throws IOException
     {
         HttpEntityEnclosingRequestBase httpMethod = (HttpEntityEnclosingRequestBase) request;
 
@@ -268,7 +272,7 @@ public final class HTTPRequestManager
      * @return {@link ResponseContainer} with response data
      * @throws IOException When there's an error sending out request
      */
-    private ResponseContainer sendRequestWithData(CloseableHttpClient client, HttpUriRequest request) throws IOException
+    ResponseContainer sendRequestWithData(CloseableHttpClient client, HttpUriRequest request) throws IOException
     {
         HttpEntityEnclosingRequestBase httpMethod = (HttpEntityEnclosingRequestBase) request;
         HttpEntity entity = new ByteArrayEntity(mData);
@@ -285,7 +289,7 @@ public final class HTTPRequestManager
      * @return {@link ResponseContainer} with response data
      * @throws IOException When there's an error sending out request
      */
-    private ResponseContainer sendRequest(CloseableHttpClient client, Object request) throws IOException
+    ResponseContainer sendRequest(CloseableHttpClient client, Object request) throws IOException
     {
         ResponseContainer responseContainer = null;
 

@@ -1,6 +1,7 @@
 *.class
 testScript.sh
-bin/
+bin
+test-output
 target
 .settings
 .classpath
