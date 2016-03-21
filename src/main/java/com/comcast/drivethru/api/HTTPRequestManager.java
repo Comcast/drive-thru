@@ -456,8 +456,9 @@ public final class HTTPRequestManager
          * Sets request's method type (GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE).
          * @param method Method to be used by the request
          * @return {@link Builder} object
-         * @Deprecated Please use {@link method(METHOD))} method
+         * @deprecated Please use {@link #method(METHOD)} instead
          */
+        @Deprecated
         public Builder method(String method)
         {
             if (method.equals("GET"))

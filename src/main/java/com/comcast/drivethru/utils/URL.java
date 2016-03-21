@@ -183,6 +183,7 @@ public class URL {
      * Build the full URL.
      *
      * @return the full URL
+     * @throws HttpException
      */
     public String build() throws HttpException {
         if (null == baseUrl) {

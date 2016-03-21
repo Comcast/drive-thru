@@ -34,8 +34,8 @@ public interface EasyRestClient<R> extends RestClient {
      *
      * <h2>Status Code Implications</h2>
      * <p>
-     * The following rules are applied as per the <a
-     * href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP 1.1 Method Definitions</a>:
+     * The following rules are applied as per the &lt;a
+     * href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"&gt;HTTP 1.1 Method Definitions&lt;/a&gt;:
      * </p>
      * <ul>
      * <li>
@@ -64,8 +64,8 @@ public interface EasyRestClient<R> extends RestClient {
      *
      * <h2>Status Code Implications</h2>
      * <p>
-     * The following rules are applied as per the <a
-     * href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP 1.1 Method Definitions</a>:
+     * The following rules are applied as per the &lt;a
+     * href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"&gt;HTTP 1.1 Method Definitions&lt;/a&gt;:
      * </p>
      * <ul>
      * <li>
