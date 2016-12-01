@@ -23,6 +23,7 @@ import static com.comcast.drivethru.constants.ServerStatusCodes.*;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +54,7 @@ import org.slf4j.LoggerFactory;
 
 import com.comcast.drivethru.model.ResponseContainer;
 
-public final class HTTPRequestManager
+public class HTTPRequestManager
 {
     // PROPERTIES ----------------------------------------------------------------------------------------------------------
     
@@ -76,6 +77,7 @@ public final class HTTPRequestManager
     // HTTP Request properties
     private String mUrl;
     private byte[] mData;
+    private HttpEntity mMultipart;
     private SSLConnectionSocketFactory mSocketFactory;
     private String mContentType;
     private Entry<String, String> mAuth;
@@ -103,10 +105,11 @@ public final class HTTPRequestManager
      * Private constructor used by the Builder subclass to create and initialize the HTTPResposneManager object.
      * @param builder Builder object that has all the needed parts to make a HTTP(S) request
      */
-    private HTTPRequestManager(Builder builder)
+    HTTPRequestManager(Builder builder)
     {
         mUrl = builder.mUrl;
         mData = builder.mData;
+        mMultipart = builder.mMultipart;
         mSocketFactory = builder.mSocketFactory;
         mContentType = builder.mContentType;
         mAuth = builder.mAuth;
@@ -243,8 +246,15 @@ public final class HTTPRequestManager
         setHeaders(httpMethod);
 
         ResponseContainer container = null;
-
-        if ((mData != null) && (mData.length > 0))
+        
+        if (mMultipart != null)
+        {
+            if (!mContentType.equals("multipart/form-data"))
+                throw new InvalidParameterException("Content type must be set to multipart/form-data for this type of request");
+                
+            container = sendRequestWithMultipartData(client, httpMethod);
+        }
+        else if ((mData != null) && (mData.length > 0))
         {
             container = sendRequestWithData(client, httpMethod);
         }
@@ -257,13 +267,29 @@ public final class HTTPRequestManager
     }
 
     /**
+     * Sends request with multipart data and returns {@link ResponseContainer} object containing response's status code and body.
+     * @param client HttpClient use to send request
+     * @param request Http request object to be sent out
+     * @return {@link ResponseContainer} with response data
+     * @throws IOException When there's an error sending out request
+     */
+    ResponseContainer sendRequestWithMultipartData(CloseableHttpClient client, HttpUriRequest request) throws IOException
+    {
+        HttpEntityEnclosingRequestBase httpMethod = (HttpEntityEnclosingRequestBase) request;
+
+        httpMethod.setEntity(mMultipart);
+
+        return sendRequest(client, httpMethod);
+    }
+
+    /**
      * Sends request with data and returns {@link ResponseContainer} object containing response's status code and body.
      * @param client HttpClient use to send request
      * @param request Http request object to be sent out
      * @return {@link ResponseContainer} with response data
      * @throws IOException When there's an error sending out request
      */
-    private ResponseContainer sendRequestWithData(CloseableHttpClient client, HttpUriRequest request) throws IOException
+    ResponseContainer sendRequestWithData(CloseableHttpClient client, HttpUriRequest request) throws IOException
     {
         HttpEntityEnclosingRequestBase httpMethod = (HttpEntityEnclosingRequestBase) request;
         HttpEntity entity = new ByteArrayEntity(mData);
@@ -280,7 +306,7 @@ public final class HTTPRequestManager
      * @return {@link ResponseContainer} with response data
      * @throws IOException When there's an error sending out request
      */
-    private ResponseContainer sendRequest(CloseableHttpClient client, Object request) throws IOException
+    ResponseContainer sendRequest(CloseableHttpClient client, Object request) throws IOException
     {
         ResponseContainer responseContainer = null;
 
@@ -375,6 +401,7 @@ public final class HTTPRequestManager
         private Map<String, String> mHeaders;
         private SSLConnectionSocketFactory mSocketFactory = null;
         private byte[] mData;
+        private HttpEntity mMultipart;
         private String mUserAgent;
         private String[] mCookies;
 
@@ -435,6 +462,18 @@ public final class HTTPRequestManager
             mData = data;
             return this;
         }
+        
+        /**
+         * Sets request's multipart data.
+         * @param multipart Multipart data to send the server
+         * @return {@link Builder} object
+         * @see {@link org.apache.http.client.entity.EntityBuilder}
+         */
+        public Builder multipart(HttpEntity multipart)
+        {
+            mMultipart = multipart;
+            return this;
+        }
 
         /**
          * Sets request's url.
@@ -473,8 +512,9 @@ public final class HTTPRequestManager
          * Sets request's method type (GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE).
          * @param method Method to be used by the request
          * @return {@link Builder} object
-         * @Deprecated Please use {@link method(METHOD))} method
+         * @deprecated Please use {@link #method(METHOD)} instead
          */
+        @Deprecated
         public Builder method(String method)
         {
             if (method.equals("GET"))

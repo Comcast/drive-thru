@@ -128,6 +128,7 @@ public class RestResponse {
     /**
      * Get the value of a header by name.
      *
+     * @param name header key
      * @return the header value or <code>null</code> if the header was not present
      */
     public String getHeaderValue(String name) {
