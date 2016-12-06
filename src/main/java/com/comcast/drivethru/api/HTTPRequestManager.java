@@ -22,8 +22,8 @@ package com.comcast.drivethru.api;
 import static com.comcast.drivethru.constants.ServerStatusCodes.*;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.security.InvalidParameterException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +34,7 @@ import javax.net.ssl.TrustManager;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpGet;
@@ -47,6 +48,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
@@ -79,6 +81,8 @@ public class HTTPRequestManager
     private byte[] mData;
     private HttpEntity mMultipart;
     private SSLConnectionSocketFactory mSocketFactory;
+    private int mSocketTimeout;
+    private int mConnectTimeout;
     private String mContentType;
     private Entry<String, String> mAuth;
     private METHOD mMethod;
@@ -111,6 +115,8 @@ public class HTTPRequestManager
         mData = builder.mData;
         mMultipart = builder.mMultipart;
         mSocketFactory = builder.mSocketFactory;
+        mSocketTimeout = builder.mSocketTimeout;
+        mConnectTimeout = builder.mConnectTimeout;
         mContentType = builder.mContentType;
         mAuth = builder.mAuth;
         mMethod = builder.mMethod;
@@ -131,19 +137,15 @@ public class HTTPRequestManager
      */
     private CloseableHttpClient createHttpClient()
     {
-        CloseableHttpClient client = null;
+        RequestConfig config = RequestConfig.custom().setSocketTimeout(mSocketTimeout).setConnectTimeout(mConnectTimeout).build();
+        HttpClientBuilder builder = HttpClients.custom().setDefaultRequestConfig(config);
 
         if (mSocketFactory != null && mUrl.startsWith("https"))
         {
-            client = HttpClients.custom().setSSLSocketFactory(
-                    mSocketFactory).build();
-        }
-        else
-        {
-            client = HttpClients.custom().build();
+            builder = builder.setSSLSocketFactory(mSocketFactory);
         }
 
-        return client;
+        return builder.build();
     }
 
     /**
@@ -400,6 +402,8 @@ public class HTTPRequestManager
         private METHOD mMethod;
         private Map<String, String> mHeaders;
         private SSLConnectionSocketFactory mSocketFactory = null;
+        private int mSocketTimeout = 30000;
+        private int mConnectTimeout = 30000;
         private byte[] mData;
         private HttpEntity mMultipart;
         private String mUserAgent;
@@ -582,6 +586,28 @@ public class HTTPRequestManager
         public Builder socketFactory(SSLConnectionSocketFactory socketFactory)
         {
             mSocketFactory = socketFactory;
+            return this;
+        }
+        
+        /**
+         * Sets request's socket timeout (Default 30,000 milliseconds)
+         * @param socketTimeout Timeout to use in milliseconds
+         * @return {@link Builder} object
+         */
+        public Builder socketTimeout(int socketTimeout)
+        {
+            mSocketTimeout = socketTimeout;
+            return this;
+        }
+        
+        /**
+         * Sets request's connection timeout (Default 30,000 milliseconds)
+         * @param connectTimeout Timeout to use in milliseconds
+         * @return {@link Builder} object
+         */
+        public Builder connectTimeout(int connectTimeout)
+        {
+            mConnectTimeout = connectTimeout;
             return this;
         }
 
