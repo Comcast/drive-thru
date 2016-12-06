@@ -19,6 +19,11 @@
 
 package com.comcast.drivethru.constants;
 
+import org.apache.http.HttpStatus;
+
+/**
+ * @deprecated Please use {@link HttpStatus} instead
+ */
 public class ServerStatusCodes
 {
     // Informational
