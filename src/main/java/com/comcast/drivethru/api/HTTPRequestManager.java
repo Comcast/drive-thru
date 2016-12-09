@@ -19,11 +19,11 @@
 
 package com.comcast.drivethru.api;
 
-import static com.comcast.drivethru.constants.ServerStatusCodes.*;
+import static org.apache.http.HttpStatus.*;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.security.InvalidParameterException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,16 +60,14 @@ public class HTTPRequestManager
     
     List<Integer> SUCCESS_CODES = Arrays.asList(new Integer[]
     { 
-        OK, 
-        CREATED, 
-        ACCEPTED, 
-        NONAUTHORITATIVE_INFORMATION, 
-        NO_CONTENT,
-        RESET_CONTENT,
-        PARTIAL_CONTENT,
-        MULTI_STATUS,
-        ALREADY_REPORTED,
-        IM_USED 
+        SC_OK, 
+        SC_CREATED, 
+        SC_ACCEPTED, 
+        SC_NON_AUTHORITATIVE_INFORMATION, 
+        SC_NO_CONTENT,
+        SC_RESET_CONTENT,
+        SC_PARTIAL_CONTENT,
+        SC_MULTI_STATUS,
     });
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HTTPRequestManager.class);

@@ -19,6 +19,8 @@
 
 package com.comcast.drivethru.test;
 
+import static org.apache.http.HttpStatus.SC_OK;
+
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -28,7 +30,6 @@ import org.testng.annotations.Test;
 
 import com.comcast.drivethru.api.HTTPRequestManager;
 import com.comcast.drivethru.api.HTTPRequestManager.METHOD;
-import com.comcast.drivethru.constants.ServerStatusCodes;
 import com.comcast.drivethru.model.ResponseContainer;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -85,7 +86,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
+        Assert.assertEquals(SC_OK, response.getStatusCode(), "Status code wasn't 200");
 
         String responseBody = response.getResponseBody();
         JsonObject jsonObject = null;
@@ -128,7 +129,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
+        Assert.assertEquals(SC_OK, response.getStatusCode(), "Status code wasn't 200");
     }
 
     /**
@@ -152,7 +153,7 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
+        Assert.assertEquals(SC_OK, response.getStatusCode(), "Status code wasn't 200");
 
         JsonParser parser = new JsonParser();
         JsonObject responseBody = (JsonObject) parser.parse(response.getResponseBody());
@@ -185,6 +186,6 @@ public class HTTPRequestManagerTest
             .build();
 
         ResponseContainer response = manager.sendRequest();
-        Assert.assertEquals(ServerStatusCodes.OK, response.getStatusCode(), "Status code wasn't 200");
+        Assert.assertEquals(SC_OK, response.getStatusCode(), "Status code wasn't 200");
     }
 }
