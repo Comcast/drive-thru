@@ -469,7 +469,7 @@ public class HTTPRequestManager
          * Sets request's multipart data.
          * @param multipart Multipart data to send the server
          * @return {@link Builder} object
-         * @see {@link org.apache.http.client.entity.EntityBuilder}
+         * @see org.apache.http.client.entity.EntityBuilder
          */
         public Builder multipart(HttpEntity multipart)
         {
