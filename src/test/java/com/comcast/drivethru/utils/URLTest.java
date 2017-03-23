@@ -20,6 +20,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.comcast.drivethru.exception.HttpException;
@@ -84,5 +85,38 @@ public class URLTest {
         url.setPath("//path");
 
         assertEquals(url.build(), "http://1.com/path");
+    }
+    
+    @DataProvider(name="testSetPathNoSlashData")
+    public Object[][] testSetPathNoSlashData() {
+        return new Object[][] { {true}, {false} };
+    }
+    
+    @Test(dataProvider="testSetPathNoSlashData")
+    public void testSetPathNoSlash(boolean baseUrlEndsInSlash) throws HttpException {
+        URL url = new URL();
+        url.setBaseUrl("http://1.com" + (baseUrlEndsInSlash ? "/" : ""));
+        url.setPath("path/here");
+
+        assertEquals(url.build(), "http://1.com/path/here");
+    }
+    
+    @Test
+    public void testSetNullPath() throws HttpException {
+        URL url = new URL();
+        url.setBaseUrl("http://1.com");
+        url.setPath(null);
+
+        assertEquals(url.build(), "http://1.com");
+    }
+
+    
+    @Test(dataProvider="testSetPathNoSlashData")
+    public void testAddPathNoSlash(boolean baseUrlEndsInSlash) throws HttpException {
+        URL url = new URL();
+        url.setBaseUrl("http://1.com" + (baseUrlEndsInSlash ? "/" : ""));
+        url.addPath("path/here");
+
+        assertEquals(url.build(), "http://1.com/path/here");
     }
 }
