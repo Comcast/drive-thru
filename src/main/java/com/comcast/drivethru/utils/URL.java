@@ -122,7 +122,7 @@ public class URL {
      * @return <code>this</code>
      */
     public URL setPath(String path) {
-        this.path = path;
+        this.path = path != null ? (path.startsWith("/") ? "" : "/") + path : null;
         return this;
     }
 
