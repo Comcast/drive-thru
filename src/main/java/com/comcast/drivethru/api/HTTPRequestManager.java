@@ -348,7 +348,7 @@ public class HTTPRequestManager
         }
         catch (IOException e)
         {
-            throw new IOException("Connection failed. Request not sent");
+            throw new IOException("Connection failed. Request not sent", e);
         }
         finally
         {
