@@ -1,4 +1,4 @@
-Drive-Thru
+Drive-Thru - This project is no longer actively maintained. 
 ==========
 [![Build Status](https://travis-ci.org/Comcast/drive-thru.svg)](https://travis-ci.org/Comcast/drive-thru)
 
